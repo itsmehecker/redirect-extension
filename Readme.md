@@ -48,7 +48,4 @@ The extension uses a `config.json` file to store key-value pairs of all the conf
 - `config.json`: The configuration file for storing redirect configurations.
 - `icons/`: Directory containing the icon files for the extension.
 
-## License
-
-This project is licensed under the MIT License.
 
