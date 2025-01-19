@@ -1,6 +1,6 @@
 # Website Redirector
 
-Website Redirector is a Chrome extension that allows users to redirect websites according to their configuration.
+Website Redirector is a browser extension that allows users to redirect websites according to their configuration.
 
 ## Features
 
@@ -11,10 +11,20 @@ Website Redirector is a Chrome extension that allows users to redirect websites 
 
 ## Installation
 
+### Chrome
+
 1. Clone or download this repository.
 2. Open Chrome and go to `chrome://extensions/`.
 3. Enable "Developer mode" using the toggle switch in the top right corner.
 4. Click the "Load unpacked" button and select the directory containing your extension files.
+
+### Firefox
+
+1. Clone or download this repository.
+2. Open Firefox and go to `about:debugging`.
+3. Click on "This Firefox" in the sidebar.
+4. Click on "Load Temporary Add-on".
+5. Select the `manifest.json` file from the `firefox` directory.
 
 ## Usage
 
@@ -31,9 +41,14 @@ The extension uses a `config.json` file to store key-value pairs of all the conf
 ## Files
 
 - `manifest.json`: The manifest file for the Chrome extension.
+- `firefox/manifest.json`: The manifest file for the Firefox extension.
 - `background.js`: The background script to handle URL redirection.
 - `popup.html`: The HTML file for the popup interface.
 - `popup.js`: The JavaScript file for the popup interface.
 - `config.json`: The configuration file for storing redirect configurations.
 - `icons/`: Directory containing the icon files for the extension.
+
+## License
+
+This project is licensed under the MIT License.
 

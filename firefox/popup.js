@@ -25,11 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', (e) => {
           let index = e.target.getAttribute('data-index');
           let input = document.querySelector(`input[data-index="${index}"]`);
-          let redirectUrl = input.value;
-          if (redirectUrl && !redirectUrl.match(/^https?:\/\//)) {
-            redirectUrl = 'https://' + redirectUrl;
-          }
-          config[index].redirectUrl = redirectUrl;
+          config[index].redirectUrl = input.value;
           chrome.storage.sync.set({ redirectConfig: config }, () => {
             console.log('Redirect URL updated.');
           });

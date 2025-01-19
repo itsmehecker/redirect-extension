@@ -1,5 +1,3 @@
-// ...existing code...
-
 chrome.action.onClicked.addListener((tab) => {
   chrome.storage.sync.get('redirectConfig', (data) => {
     let config = data.redirectConfig || [];
@@ -23,7 +21,7 @@ function updateDynamicRules(config) {
     .map((item, index) => ({
       id: index + 1,
       priority: 1,
-      action: { type: 'redirect', redirect: { url: item.redirectUrl } },
+      action: { type: 'redirect', redirect: { url: item.redirectUrl.match(/^https?:\/\//) ? item.redirectUrl : 'https://' + item.redirectUrl } },
       condition: { urlFilter: item.url, resourceTypes: ['main_frame'] }
     }));
 
@@ -42,4 +40,3 @@ chrome.runtime.onStartup.addListener(() => {
   });
 });
 
-// ...existing code...
